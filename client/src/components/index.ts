@@ -1,0 +1,1 @@
+export { StartCard } from "./StartCard";
