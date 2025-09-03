@@ -1,4 +1,4 @@
-export interface QuizInfo {
+interface QuizInfo {
   title: string;
   questionCount: number;
   timeLimit: number;

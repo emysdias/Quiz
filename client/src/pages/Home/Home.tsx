@@ -1,4 +1,4 @@
-import { StartCard } from "@/components";
+import { StartCard, LeaderBoard } from "@/components";
 
 const Home = () => {
   const onStartQuiz = () => {
@@ -10,9 +10,23 @@ const Home = () => {
     timeLimit: 10,
     players: 1,
   };
+
+  const userInfo = [
+    {
+      id: 1,
+      name: "Thiago",
+      score: 100,
+    },
+    {
+      id: 2,
+      name: "Emily",
+      score: 200,
+    },
+  ];
   return (
-    <section className="bg-green">
+    <section className="flex justify-between">
       <StartCard onStartQuiz={onStartQuiz} quizInfo={quizInfo} />
+      <LeaderBoard userInfo={userInfo} />
     </section>
   );
 };
