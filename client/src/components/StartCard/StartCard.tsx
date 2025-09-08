@@ -5,7 +5,7 @@ const StartQuiz: React.FC<StartQuizProps> = ({ quizInfo, onStartQuiz }) => {
   return (
     <section className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
       <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-        Title
+        General Knowledge Quiz
       </h2>
 
       <div className="space-y-4 mb-8">

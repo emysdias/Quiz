@@ -24,8 +24,13 @@ const Home = () => {
     },
   ];
   return (
-    <section className="flex justify-between">
-      <StartCard onStartQuiz={onStartQuiz} quizInfo={quizInfo} />
+    <section className="flex justify-between p-12">
+      <div className="flex flex-col w-full">
+        <h1 className="text-4xl font-bold mb-8 text-gray-800">
+          Lobby
+        </h1>
+        <StartCard onStartQuiz={onStartQuiz} quizInfo={quizInfo} />
+      </div>
       <LeaderBoard userInfo={userInfo} />
     </section>
   );
