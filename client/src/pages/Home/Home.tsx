@@ -1,9 +1,10 @@
-import { StartCard, LeaderBoard } from "@/components";
+import { StartCard, LeaderBoard, Header } from "@/components";
 
 const Home = () => {
   const onStartQuiz = () => {
-    console.log("worked");
+    console.log("Quiz iniciado");
   };
+
   const quizInfo = {
     title: "General Knowledge Quiz",
     questionCount: 10,
@@ -12,27 +13,42 @@ const Home = () => {
   };
 
   const userInfo = [
-    {
-      id: 1,
-      name: "Thiago",
-      score: 100,
-    },
-    {
-      id: 2,
-      name: "Emily",
-      score: 200,
-    },
+    { id: 1, name: "Thiago", score: 100 },
+    { id: 2, name: "Emily", score: 200 },
   ];
+
   return (
-    <section className="flex justify-between p-12">
-      <div className="flex flex-col w-full">
-        <h1 className="text-4xl font-bold mb-8 text-gray-800">
-          Lobby
-        </h1>
-        <StartCard onStartQuiz={onStartQuiz} quizInfo={quizInfo} />
-      </div>
-      <LeaderBoard userInfo={userInfo} />
-    </section>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+
+      <main className="flex-1 bg-gradient-to-b from-blue-50 to-indigo-100 p-4">
+        <div className="container mx-auto max-w-6xl py-8">
+          <div className="mb-10 text-center">
+            <h1 className="text-4xl font-bold text-gray-800 mb-2">
+              Quiz Lobby
+            </h1>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Prepare-se para testar seus conhecimentos no nosso quiz de
+              conhecimento geral. Veja a classificação dos melhores jogadores e
+              desafie-se!
+            </p>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
+            <article className="flex-1">
+              <StartCard onStartQuiz={onStartQuiz} quizInfo={quizInfo} />
+            </article>
+
+            <aside
+              aria-labelledby="leaderboard-heading"
+              className="w-full lg:max-w-md"
+            >
+              <LeaderBoard userInfo={userInfo} />
+            </aside>
+          </div>
+        </div>
+      </main>
+    </div>
   );
 };
 
